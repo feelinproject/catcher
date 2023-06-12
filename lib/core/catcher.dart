@@ -80,9 +80,9 @@ class Catcher with ReportModeAction {
     _configureNavigatorKey(navigatorKey);
     _setupCurrentConfig();
     _configureLogger();
+    _setupScreenshotManager();
     _setupErrorHooks();
     _setupReportModeActionInReportMode();
-    _setupScreenshotManager();
 
     _loadDeviceInfo();
     _loadApplicationInfo();
@@ -154,8 +154,8 @@ class Catcher with ReportModeAction {
     }
     _setupCurrentConfig();
     _setupReportModeActionInReportMode();
-    _setupScreenshotManager();
     _configureLogger();
+    _setupScreenshotManager();
     _localizationOptions = null;
   }
 
