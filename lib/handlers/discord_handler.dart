@@ -110,7 +110,7 @@ class DiscordHandler extends ReportHandler {
   Future<bool> _sendContent(String content, File? screenshot) async {
     try {
       _printLog("Sending request to Discord server...");
-      Response? response;
+      Response<dynamic>? response;
       if (screenshot != null) {
         final screenshotPath = screenshot.path;
         final FormData formData = FormData.fromMap(<String, dynamic>{

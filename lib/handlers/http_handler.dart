@@ -70,7 +70,7 @@ class HttpHandler extends ReportHandler {
         headers: mutableHeaders,
       );
 
-      Response? response;
+      Response<dynamic>? response;
       _printLog("Calling: ${endpointUri.toString()}");
       if (report.screenshot != null) {
         final screenshotPath = report.screenshot?.path ?? "";

@@ -71,7 +71,7 @@ class FileHandler extends ReportHandler {
     }
   }
 
-  Future _openFile() async {
+  Future<void> _openFile() async {
     _sink = file.openWrite(mode: FileMode.append);
     _printLog("Opened file");
   }
@@ -80,7 +80,7 @@ class FileHandler extends ReportHandler {
     _sink.add(utf8.encode('$text\n'));
   }
 
-  Future _closeFile() async {
+  Future<void> _closeFile() async {
     await _sink.flush();
     await _sink.close();
     _printLog("Closed file");

@@ -100,7 +100,7 @@ class NotificationReportMode extends ReportMode {
     _sendNotification();
   }
 
-  Future onSelectedNotification(String? payload) {
+  Future<void> onSelectedNotification(String? payload) {
     onActionConfirmed(_lastReport);
     return Future<int>.value(0);
   }

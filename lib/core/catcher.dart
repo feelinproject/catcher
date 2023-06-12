@@ -183,7 +183,7 @@ class Catcher with ReportModeAction {
     });
   }
 
-  Future _setupErrorHooks() async {
+  Future<void> _setupErrorHooks() async {
     FlutterError.onError = (FlutterErrorDetails details) async {
       _reportError(details.exception, details.stack, errorDetails: details);
     };
@@ -648,6 +648,7 @@ class Catcher with ReportModeAction {
       _logger.warning(
         "Error occurred in ${reportHandler.toString()}: ${handlerError.toString()}",
       );
+      return true;
     }).then((result) {
       _logger.info("${report.runtimeType} result: $result");
       if (!result) {
